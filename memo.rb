@@ -20,7 +20,7 @@ if memo_type == 1
   p "完了したらctrl+Dを入力してエンターキーを押してください。"
   
   # キーボードでメモ内容を入力して取得。入力されるまで待機
-  inputContent = STDIN.read
+  inputContent = STDIN.read.chomp
   
   # csvファイルの出力
   CSV.open("#{file_name}.csv","w") do |csv|
@@ -35,10 +35,10 @@ elsif memo_type == 2
   
   # ファイル名を入力したら以下をコンソールに表示
   p "変更したい内容を入力してください"
-  p "完了したらctrl+Dを押します"
+  p "完了したらctrl+Dを入力してエンターキーを押してください。"
   
   # キーボードで追記したい内容を入力して取得
-  inputContent2 = STDIN.read
+  inputContent2 = STDIN.read.chomp
   
   # csvファイルの更新
   CSV.open("#{file_name}.csv","a") do |csv|
